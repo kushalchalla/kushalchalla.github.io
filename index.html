@@ -6,15 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Inter, Arial, sans-serif;
@@ -23,10 +17,7 @@
       line-height: 1.6;
     }
 
-    a {
-      color: #4ade80;
-      text-decoration: none;
-    }
+    a { color: #4ade80; text-decoration: none; }
 
     nav {
       position: fixed;
@@ -39,13 +30,8 @@
       z-index: 10;
     }
 
-    nav a {
-      color: #aaa;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
+    nav a { color: #aaa; }
+    nav a:hover { color: #fff; }
 
     section {
       max-width: 1100px;
@@ -114,13 +100,37 @@
       border-color: #4ade80;
     }
 
-    .project-card h3 {
-      margin-bottom: 12px;
+    .project-card h3 { margin-bottom: 12px; }
+    .project-card p { color: #aaa; font-size: 15px; }
+
+    /* EDUCATION */
+    .education-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 40px;
     }
 
-    .project-card p {
-      color: #aaa;
-      font-size: 15px;
+    .education-card {
+      background: linear-gradient(145deg, #141414, #1b1b1b);
+      border: 1px solid #222;
+      padding: 28px 32px;
+      border-radius: 16px;
+    }
+
+    .education-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .education-card span {
+      color: #b18c8c;
+      font-weight: 500;
+    }
+
+    .education-card p {
+      color: #ccc;
+      font-size: 16px;
     }
 
     /* ANIMATION */
@@ -156,6 +166,7 @@
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#work">WORK</a>
+    <a href="#education">EDUCATION</a>
     <a href="#contact">CONTACT</a>
   </nav>
 
@@ -186,7 +197,6 @@
     <h2>Work</h2>
 
     <div class="projects-grid">
-
       <div class="project-card">
         <h3>📈 Financial Forecasting Models</h3>
         <p>
@@ -210,6 +220,34 @@
           and SQL to reduce manual effort and improve speed.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="education-list">
+
+      <div class="education-card">
+        <h3>Saint Louis University <span>– St. Louis, MO</span></h3>
+        <p>Master’s in Information Systems</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Woxsen University <span>– Hyderabad, India</span></h3>
+        <p>MBA in Financial Services & MSc in Finance</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Bennett University <span>– New Delhi, India</span></h3>
+        <p>B.Tech in Computer Science</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Jawaharlal Nehru Technological University <span>– Hyderabad, India</span></h3>
+        <p>Bachelor’s in Civil Engineering</p>
+      </div>
 
     </div>
   </section>
@@ -227,7 +265,7 @@
     © 2026 Kushal Challa
   </footer>
 
-  <!-- SCROLL ANIMATION SCRIPT -->
+  <!-- ANIMATION SCRIPT -->
   <script>
     const elements = document.querySelectorAll('.fade-in');
 
