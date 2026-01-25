@@ -1,60 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Kushal Challa | Senior FP&A Analyst</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
+      font-family: Inter, Arial, sans-serif;
+      background: #0b0b0b;
+      color: #f5f5f5;
       line-height: 1.6;
-      color: #222;
     }
-    h1 { font-size: 36px; }
-    h2 { margin-top: 40px; }
-    a { color: #0366d6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .tagline { color: #555; }
+
+    a { color: #4ade80; text-decoration: none; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 24px 40px;
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: #aaa;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 120px 40px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hello {
+      color: #4ade80;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #b5b5b5;
+      max-width: 800px;
+    }
+
+    .pill {
+      margin-top: 32px;
+      display: inline-block;
+      border: 1px solid #333;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 52px; }
+      nav { position: static; justify-content: center; }
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>Kushal Challa (KC)</h1>
-  <p class="tagline">Senior Financial Planning & Analysis (FP&A) Analyst</p>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#work">WORK</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
 
-  <p>
-    I build financial models for better decision insights — across targets,
-    budgets, and forecasting. I enjoy building models even for fun, as it
-    gives deeper understanding of how businesses operate.
-  </p>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hello">Hey there, I’m</div>
+    <h1>Kushal Challa</h1>
+    <p class="subtitle">
+      Senior Financial Planning & Analysis (FP&A) Analyst.
+      I build financial models, forecasts, and decision frameworks that help businesses
+      understand where they are — and where they should go.
+    </p>
 
-  <h2>About Me</h2>
-  <p>
-    I am a Senior FP&A Analyst focused on financial modeling, forecasting,
-    and business insights. My work translates numbers into clear,
-    actionable decisions for stakeholders.
-  </p>
+    <div class="pill">📊 Finance • Analytics • Decision Intelligence</div>
+  </section>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>Excel (advanced financial modeling)</li>
-    <li>Power BI dashboards</li>
-    <li>SaaS metrics & unit economics</li>
-    <li>Python & SQL</li>
-    <li>Beginner in Machine Learning</li>
-  </ul>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I work at the intersection of finance, data, and business strategy.
+      My focus is on budgeting, forecasting, SaaS metrics, and building models
+      that convert complexity into clarity.
+    </p>
+  </section>
 
-  <h2>Projects</h2>
-  <p><em>Coming soon</em></p>
+  <!-- WORK -->
+  <section id="work">
+    <h2>Work</h2>
+    <ul>
+      <li>Financial forecasting & scenario modeling</li>
+      <li>SaaS metrics & unit economics</li>
+      <li>Power BI dashboards</li>
+      <li>Python & SQL analysis</li>
+    </ul>
+    <p style="margin-top:16px; color:#777;">Projects coming soon.</p>
+  </section>
 
-  <h2>Contact</h2>
-  <p>
-    Email: your-email@email.com <br>
-    LinkedIn: your-linkedin-url
-  </p>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your-email@email.com</p>
+    <p>LinkedIn: your-linkedin-url</p>
+  </section>
+
+  <footer>
+    © 2026 Kushal Challa
+  </footer>
 
 </body>
 </html>
+
