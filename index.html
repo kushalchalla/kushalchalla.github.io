@@ -30,8 +30,7 @@
     }
 
     nav a { color: #aaa; }
-    nav a.active,
-    nav a:hover {
+    nav a.active, nav a:hover {
       color: #fff;
       border-bottom: 1px solid #4ade80;
       padding-bottom: 4px;
@@ -53,48 +52,21 @@
       position: relative;
     }
 
-    .hello {
-      color: #4ade80;
-      font-size: 18px;
-      letter-spacing: 0.5px;
-    }
-
-    h1 {
-      font-size: 84px;
-      font-weight: 800;
-      line-height: 1.05;
-      min-height: 90px;
-    }
-
-    .subtitle {
-      font-size: 22px;
-      color: #b5b5b5;
-      max-width: 780px;
-    }
-
-    .hero-highlight {
-      margin-top: 18px;
-      font-size: 18px;
-      color: #e5e5e5;
-    }
-
-    .currently {
-      margin-top: 14px;
-      font-size: 16px;
-      color: #9ca3af;
-    }
-
+    .hello { color: #4ade80; font-size: 18px; }
+    h1 { font-size: 84px; font-weight: 800; min-height: 90px; }
+    .subtitle { font-size: 22px; color: #b5b5b5; max-width: 780px; }
+    .hero-highlight { font-size: 18px; color: #e5e5e5; margin-top: 12px; }
+    .currently { font-size: 16px; color: #9ca3af; }
     .pill {
-      margin-top: 32px;
-      align-self: flex-start;
+      margin-top: 28px;
       border: 1px solid #2a2a2a;
       padding: 10px 18px;
       border-radius: 999px;
       font-size: 13px;
-      color: #cfcfcf;
+      width: fit-content;
     }
 
-    /* SCROLL CUE */
+    /* Scroll cue */
     .scroll-cue {
       position: absolute;
       bottom: 40px;
@@ -103,23 +75,14 @@
       font-size: 14px;
       color: #9ca3af;
       animation: pulse 2s infinite;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.4s;
     }
-
-    .scroll-cue.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
+    .scroll-cue.hidden { opacity: 0; pointer-events: none; }
     @keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
+      0%,100%{opacity:.4}50%{opacity:1}
     }
 
-    h2 {
-      font-size: 42px;
-      margin-bottom: 24px;
-    }
+    h2 { font-size: 42px; margin-bottom: 24px; }
 
     /* ABOUT */
     .about-wrapper {
@@ -128,21 +91,19 @@
       gap: 48px;
       align-items: center;
     }
-
     .about-wrapper img {
       width: 100%;
       border-radius: 16px;
       border: 1px solid #222;
     }
 
-    /* PROJECTS */
+    /* WORK */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 40px;
     }
-
     .project-card {
       background: #121212;
       border: 1px solid #222;
@@ -152,7 +113,6 @@
       transform: translateY(20px);
       transition: all 0.6s ease;
     }
-
     .project-card.visible {
       opacity: 1;
       transform: translateY(0);
@@ -165,20 +125,15 @@
       gap: 28px;
       margin-top: 40px;
     }
-
     .education-card {
-      background: linear-gradient(145deg, #141414, #1b1b1b);
+      background: linear-gradient(145deg,#141414,#1b1b1b);
       border: 1px solid #222;
       padding: 28px 32px;
       border-radius: 16px;
     }
+    .education-card span { color: #b18c8c; }
 
-    .education-card span {
-      color: #b18c8c;
-      font-weight: 500;
-    }
-
-    /* STICKY CTA */
+    /* Sticky CTA */
     .sticky-cta {
       position: fixed;
       bottom: 28px;
@@ -190,9 +145,8 @@
       font-size: 14px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.4s;
     }
-
     .sticky-cta.visible {
       opacity: 1;
       pointer-events: auto;
@@ -205,192 +159,135 @@
       font-size: 14px;
     }
 
-    /* ANIMATION */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 52px; }
-      nav { position: static; justify-content: center; }
-      .about-wrapper { grid-template-columns: 1fr; }
+    @media (max-width:768px){
+      h1{font-size:52px}
+      nav{position:static;justify-content:center}
+      .about-wrapper{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="#home" data-section="home">HOME</a>
-    <a href="#about" data-section="about">ABOUT</a>
-    <a href="#work" data-section="work">WORK</a>
-    <a href="#education" data-section="education">EDUCATION</a>
-    <a href="#contact" data-section="contact">CONTACT</a>
-  </nav>
+<nav>
+  <a href="#home" data-section="home">HOME</a>
+  <a href="#about" data-section="about">ABOUT</a>
+  <a href="#work" data-section="work">WORK</a>
+  <a href="#education" data-section="education">EDUCATION</a>
+  <a href="#contact" data-section="contact">CONTACT</a>
+</nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hello fade-in">Hey there, I’m</div>
-    <h1 id="animated-name"></h1>
+<section id="home" class="hero">
+  <div class="hello">Hey there, I’m</div>
+  <h1 id="animated-name"></h1>
 
-    <p class="subtitle fade-in">
-      Senior FP&A Analyst building decision-intelligence through
-      financial models, forecasting systems, and business insights.
-    </p>
+  <p class="subtitle">
+    Senior FP&A Analyst building decision-intelligence through
+    financial models, forecasting systems, and business insights.
+  </p>
 
-    <div class="hero-highlight fade-in">
-      → Turning financial data into clear, executive-ready decisions.
-    </div>
-
-    <div class="currently fade-in">
-      <strong>Currently:</strong> Working on forecasting models, budgeting frameworks,
-      and SaaS KPI dashboards for business planning and performance tracking.
-    </div>
-
-    <div class="pill fade-in">
-      📊 Finance • Analytics • Forecasting • SaaS Metrics
-    </div>
-
-    <div class="scroll-cue">↓ Scroll</div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-wrapper">
-      <img src="IMG_3487.jpg" alt="Kushal Challa">
-      <p>
-        I work at the intersection of finance, data, and business strategy.
-        My focus is on budgeting, forecasting, SaaS metrics, and building
-        financial models that help leaders make confident, data-driven decisions.
-      </p>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work">
-    <h2>Work</h2>
-    <div class="projects-grid">
-      <div class="project-card">📈 Financial Forecasting Models</div>
-      <div class="project-card">📊 SaaS Metrics Dashboards</div>
-      <div class="project-card">⚙️ Python & SQL Analysis</div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-list">
-      <div class="education-card">
-        <strong>Woxsen University</strong> <span>– Hyderabad</span>
-        <p>MBA in Financial Services & MSc in Finance</p>
-      </div>
-      <div class="education-card">
-        <strong>Bennett University</strong> <span>– New Delhi</span>
-        <p>B.Tech in Computer Science</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:challakushal.2k@gmail.com">challakushal.2k@gmail.com</a></p>
-    <p>📱 <a href="tel:+919182048891">+91 91820 48891</a></p>
-    <p>💼 <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">
-      linkedin.com/in/kushalchalla</a></p>
-  </section>
-
-  <footer>© 2026 Kushal Challa</footer>
-
-  <div class="sticky-cta">
-    <a href="#work">View my work</a>
+  <div class="hero-highlight">
+    → Turning financial data into clear, executive-ready decisions.
   </div>
 
-  <script>
-    /* Fade-in observer */
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    });
-    fadeElements.forEach(el => fadeObserver.observe(el));
+  <div class="currently">
+    <strong>Currently:</strong> Working on forecasting models, budgeting frameworks,
+    and SaaS KPI dashboards.
+  </div>
 
-    /* Name typing animation */
-    const nameText = "Kushal Challa";
-    const nameEl = document.getElementById("animated-name");
-    let i = 0;
-    function typeName() {
-      if (i < nameText.length) {
-        nameEl.textContent += nameText.charAt(i);
-        i++;
-        setTimeout(typeName, 70);
+  <div class="pill">📊 Finance • Analytics • Forecasting • SaaS Metrics</div>
+  <div class="scroll-cue">↓ Scroll</div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="about-wrapper">
+    <img src="IMG_3487.jpg" alt="Kushal Challa">
+    <p>
+      I work at the intersection of finance, data, and business strategy.
+      My focus is on budgeting, forecasting, SaaS metrics, and building
+      models that help leaders make confident decisions.
+    </p>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Work</h2>
+  <div class="projects-grid">
+    <div class="project-card">📈 Financial Forecasting Models</div>
+    <div class="project-card">📊 SaaS Metrics Dashboards</div>
+    <div class="project-card">⚙️ Python & SQL Analysis</div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-list">
+
+    <div class="education-card">
+      <h3>
+        <a href="woxsen.html">Woxsen University</a>
+        <span> – Hyderabad</span>
+      </h3>
+      <p>MBA in Financial Services & MSc in Finance</p>
+    </div>
+
+    <div class="education-card">
+      <h3>Bennett University <span>– New Delhi</span></h3>
+      <p>B.Tech in Computer Science</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📧 <a href="mailto:challakushal.2k@gmail.com">challakushal.2k@gmail.com</a></p>
+  <p>📱 <a href="tel:+919182048891">+91 91820 48891</a></p>
+  <p>💼 <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">LinkedIn</a></p>
+</section>
+
+<footer>© 2026 Kushal Challa</footer>
+
+<div class="sticky-cta"><a href="#work">View my work</a></div>
+
+<script>
+  // Name animation
+  const name="Kushal Challa",el=document.getElementById("animated-name");
+  let i=0;(()=>{if(i<name.length){el.textContent+=name[i++];setTimeout(arguments.callee,70)}})();
+
+  // Scroll cue hide
+  const cue=document.querySelector(".scroll-cue");
+  let scrolled=false;
+  window.addEventListener("scroll",()=>{if(!scrolled&&scrollY>20){cue.classList.add("hidden");scrolled=true}});
+
+  // Sticky CTA delay
+  const cta=document.querySelector(".sticky-cta");
+  let shown=false;
+  window.addEventListener("scroll",()=>{
+    if(scrollY>400&&!shown){shown=true;setTimeout(()=>cta.classList.add("visible"),600)}
+    if(scrollY<200){cta.classList.remove("visible");shown=false}
+  });
+
+  // Project stagger
+  const cards=document.querySelectorAll(".project-card");
+  const obs=new IntersectionObserver(e=>{
+    e.forEach(x=>{
+      if(x.isIntersecting){
+        cards.forEach((c,i)=>setTimeout(()=>c.classList.add("visible"),i*150))
       }
-    }
-    typeName();
+    })
+  },{threshold:.3});
+  cards.forEach(c=>obs.observe(c));
 
-    /* Scroll cue hide after first scroll */
-    const scrollCue = document.querySelector('.scroll-cue');
-    let scrolledOnce = false;
-    window.addEventListener('scroll', () => {
-      if (!scrolledOnce && window.scrollY > 20) {
-        scrollCue.classList.add('hidden');
-        scrolledOnce = true;
-      }
-    });
-
-    /* Sticky CTA with delay */
-    const cta = document.querySelector('.sticky-cta');
-    let ctaShown = false;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400 && !ctaShown) {
-        ctaShown = true;
-        setTimeout(() => cta.classList.add('visible'), 600);
-      }
-      if (window.scrollY < 200) {
-        cta.classList.remove('visible');
-        ctaShown = false;
-      }
-    });
-
-    /* Staggered project cards */
-    const projectCards = document.querySelectorAll('.project-card');
-    const projectObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          projectCards.forEach((card, index) => {
-            setTimeout(() => card.classList.add('visible'), index * 150);
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-    projectCards.forEach(card => projectObserver.observe(card));
-
-    /* Active nav highlight */
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 140) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.section === current) link.classList.add('active');
-      });
-    });
-  </script>
+  // Active nav
+  const secs=document.querySelectorAll("section"),links=document.querySelectorAll("nav a");
+  window.addEventListener("scroll",()=>{
+    let cur="";
+    secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id});
+    links.forEach(l=>l.classList.toggle("active",l.dataset.section===cur));
+  });
+</script>
 
 </body>
 </html>
