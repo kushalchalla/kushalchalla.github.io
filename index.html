@@ -7,7 +7,6 @@
 
   <style>
     html { scroll-behavior: smooth; }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -79,6 +78,20 @@
       margin-bottom: 24px;
     }
 
+    /* ABOUT WITH IMAGE */
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-wrapper img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid #222;
+    }
+
     /* PROJECTS */
     .projects-grid {
       display: grid;
@@ -100,9 +113,6 @@
       border-color: #4ade80;
     }
 
-    .project-card h3 { margin-bottom: 12px; }
-    .project-card p { color: #aaa; font-size: 15px; }
-
     /* EDUCATION */
     .education-list {
       display: flex;
@@ -118,19 +128,9 @@
       border-radius: 16px;
     }
 
-    .education-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
     .education-card span {
       color: #b18c8c;
       font-weight: 500;
-    }
-
-    .education-card p {
-      color: #ccc;
-      font-size: 16px;
     }
 
     /* ANIMATION */
@@ -155,6 +155,7 @@
     @media (max-width: 768px) {
       h1 { font-size: 52px; }
       nav { position: static; justify-content: center; }
+      .about-wrapper { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -185,11 +186,16 @@
   <!-- ABOUT -->
   <section id="about">
     <h2>About</h2>
-    <p>
-      I work at the intersection of finance, data, and business strategy.
-      My focus is on budgeting, forecasting, SaaS metrics, and building
-      financial models that help leaders make confident decisions.
-    </p>
+
+    <div class="about-wrapper">
+      <img src="IMG_3487.jpg" alt="Kushal Challa">
+
+      <p>
+        I work at the intersection of finance, data, and business strategy.
+        My focus is on budgeting, forecasting, SaaS metrics, and building
+        financial models that help leaders make confident, data-driven decisions.
+      </p>
+    </div>
   </section>
 
   <!-- WORK -->
@@ -199,26 +205,17 @@
     <div class="projects-grid">
       <div class="project-card">
         <h3>📈 Financial Forecasting Models</h3>
-        <p>
-          Built multi-scenario forecasting models to support budgeting,
-          growth planning, and leadership decision-making.
-        </p>
+        <p>Multi-scenario models supporting budgeting, planning, and growth decisions.</p>
       </div>
 
       <div class="project-card">
         <h3>📊 SaaS Metrics Dashboards</h3>
-        <p>
-          Designed KPI dashboards tracking ARR, churn, LTV, and CAC
-          to give stakeholders real-time visibility.
-        </p>
+        <p>ARR, churn, LTV, CAC dashboards for leadership visibility.</p>
       </div>
 
       <div class="project-card">
         <h3>⚙️ Python & SQL Analysis</h3>
-        <p>
-          Automated financial analysis and reporting using Python
-          and SQL to reduce manual effort and improve speed.
-        </p>
+        <p>Automated analysis and reporting to reduce manual effort.</p>
       </div>
     </div>
   </section>
@@ -229,7 +226,10 @@
 
     <div class="education-list">
 
-     
+      <div class="education-card">
+        <h3>Saint Louis University <span>– St. Louis, MO</span></h3>
+        <p>Master’s in Information Systems</p>
+      </div>
 
       <div class="education-card">
         <h3>Woxsen University <span>– Hyderabad, India</span></h3>
@@ -241,7 +241,10 @@
         <p>B.Tech in Computer Science</p>
       </div>
 
-     
+      <div class="education-card">
+        <h3>Jawaharlal Nehru Technological University <span>– Hyderabad, India</span></h3>
+        <p>Bachelor’s in Civil Engineering</p>
+      </div>
 
     </div>
   </section>
@@ -249,9 +252,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>📧 Email: <a href="mailto:challakushal.2k@gmail.com">challakushal.2k@gmail.com</a></p>
-    <p>📱 Mobile: <a href="tel:+919182048891">+91 91820 48891</a></p>
-    <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">
+    <p>📧 <a href="mailto:challakushal.2k@gmail.com">challakushal.2k@gmail.com</a></p>
+    <p>📱 <a href="tel:+919182048891">+91 91820 48891</a></p>
+    <p>💼 <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">
       linkedin.com/in/kushalchalla</a></p>
   </section>
 
@@ -259,10 +262,9 @@
     © 2026 Kushal Challa
   </footer>
 
-  <!-- ANIMATION SCRIPT -->
+  <!-- SCROLL ANIMATION -->
   <script>
     const elements = document.querySelectorAll('.fade-in');
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -270,7 +272,6 @@
         }
       });
     });
-
     elements.forEach(el => observer.observe(el));
   </script>
 
