@@ -11,38 +11,44 @@
 
     body {
       font-family: Inter, Arial, sans-serif;
-      background: #0b0b0b;
+      background: radial-gradient(circle at top, #1a1d29 0%, #0f1115 60%);
       color: #f5f5f5;
       line-height: 1.6;
     }
 
     a { color: #4ade80; text-decoration: none; }
 
-    /* NAV */
+    /* NAV — LEFT & HORIZONTAL */
     nav {
       position: fixed;
       top: 0;
-      right: 0;
-      padding: 24px 40px;
+      left: 0;
+      width: 100%;
+      padding: 24px 48px;
       display: flex;
-      gap: 24px;
+      gap: 32px;
       font-size: 14px;
+      background: rgba(15,17,21,0.6);
+      backdrop-filter: blur(10px);
       z-index: 10;
     }
 
-    nav a { color: #aaa; }
+    nav a {
+      color: #a1a1aa;
+      font-weight: 500;
+    }
 
     nav a.active,
     nav a:hover {
       color: #fff;
-      border-bottom: 1px solid #4ade80;
-      padding-bottom: 4px;
+      border-bottom: 2px solid #4ade80;
+      padding-bottom: 6px;
     }
 
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 120px 40px;
+      padding: 140px 40px;
     }
 
     /* HERO */
@@ -70,7 +76,7 @@
 
     .subtitle {
       font-size: 22px;
-      color: #b5b5b5;
+      color: #c7c7d1;
       max-width: 780px;
     }
 
@@ -82,17 +88,18 @@
 
     .currently {
       font-size: 16px;
-      color: #9ca3af;
+      color: #a1a1aa;
     }
 
     .pill {
       margin-top: 28px;
-      border: 1px solid #2a2a2a;
+      background: #151822;
+      border: 1px solid #23263a;
       padding: 10px 18px;
       border-radius: 999px;
       font-size: 13px;
       width: fit-content;
-      color: #cfcfcf;
+      color: #d4d4d8;
     }
 
     /* SCROLL CUE */
@@ -142,7 +149,7 @@
     .about-wrapper img {
       width: 100%;
       border-radius: 16px;
-      border: 1px solid #222;
+      border: 1px solid #23263a;
     }
 
     /* WORK */
@@ -154,10 +161,10 @@
     }
 
     .project-card {
-      background: #121212;
-      border: 1px solid #222;
+      background: #151822;
+      border: 1px solid #23263a;
       padding: 24px;
-      border-radius: 12px;
+      border-radius: 14px;
       opacity: 0;
       transform: translateY(16px);
       transition: all 0.6s ease;
@@ -177,8 +184,8 @@
     }
 
     .education-card {
-      background: linear-gradient(145deg,#141414,#1b1b1b);
-      border: 1px solid #222;
+      background: #151822;
+      border: 1px solid #23263a;
       padding: 28px 32px;
       border-radius: 16px;
       opacity: 0;
@@ -192,7 +199,7 @@
     }
 
     .education-card span {
-      color: #b18c8c;
+      color: #9ca3af;
     }
 
     /* STICKY CTA */
@@ -200,9 +207,9 @@
       position: fixed;
       bottom: 28px;
       right: 28px;
-      background: #121212;
-      border: 1px solid #2a2a2a;
-      padding: 10px 16px;
+      background: #151822;
+      border: 1px solid #23263a;
+      padding: 10px 18px;
       border-radius: 999px;
       font-size: 14px;
       opacity: 0;
@@ -218,13 +225,17 @@
     footer {
       text-align: center;
       padding: 40px;
-      color: #777;
+      color: #9ca3af;
       font-size: 14px;
     }
 
     @media (max-width: 768px) {
       h1 { font-size: 52px; }
-      nav { position: static; justify-content: center; }
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
       .about-wrapper { grid-template-columns: 1fr; }
     }
   </style>
@@ -255,8 +266,8 @@
   </div>
 
   <div class="currently">
-    <strong>Currently:</strong> Working on forecasting models, budgeting frameworks,
-    and SaaS KPI dashboards.
+    <strong>Currently:</strong> Working on budgeting, forecasting,
+    and back-testing strategies across FP&A cycles.
   </div>
 
   <div class="pill">📊 Finance • Analytics • Forecasting • SaaS Metrics</div>
@@ -269,18 +280,13 @@
 
   <div class="about-wrapper">
     <img src="IMG_3487.jpg" alt="Kushal Challa">
-
     <p>
-      I work at the intersection of finance, data, and business strategy, with
-      <strong>3+ years of experience in the FP&A domain</strong>.
-      My work spans budgeting, forecasting, and performance analysis across
-      multiple planning cycles.
+      I bring <strong>3+ years of experience in the FP&A domain</strong>,
+      working hands-on across budgeting, forecasting, and performance analysis.
       <br><br>
-      I have hands-on experience with
-      <strong>scenario planning, forecasting, and back-testing strategies</strong>
-      to evaluate outcomes and improve decision accuracy. My focus is on
-      building financial models that are not just accurate, but practical and
-      executive-ready.
+      I’ve built and back-tested financial strategies, supported planning
+      cycles, and developed models that are practical, decision-ready,
+      and aligned with leadership needs.
     </p>
   </div>
 </section>
@@ -299,20 +305,14 @@
 <section id="education">
   <h2><span class="icon">🎓</span> Education</h2>
   <div class="education-list">
-
     <div class="education-card">
-      <h3>
-        <a href="woxsen.html">Woxsen University</a>
-        <span> – Hyderabad</span>
-      </h3>
+      <h3><a href="woxsen.html">Woxsen University</a> <span>– Hyderabad</span></h3>
       <p>MBA in Financial Services & MSc in Finance</p>
     </div>
-
     <div class="education-card">
       <h3>Bennett University <span>– New Delhi</span></h3>
       <p>B.Tech in Computer Science</p>
     </div>
-
   </div>
 </section>
 
@@ -331,73 +331,43 @@
 </div>
 
 <script>
-  /* Name animation */
-  const nameText = "Kushal Challa";
-  const nameEl = document.getElementById("animated-name");
-  let i = 0;
-  (function typeName() {
-    if (i < nameText.length) {
-      nameEl.textContent += nameText.charAt(i++);
-      setTimeout(typeName, 70);
-    }
-  })();
+  // Name animation
+  const nameText="Kushal Challa",el=document.getElementById("animated-name");
+  let i=0;(function t(){if(i<nameText.length){el.textContent+=nameText[i++];setTimeout(t,70)}})();
 
-  /* Scroll cue hide */
-  const scrollCue = document.querySelector(".scroll-cue");
-  let scrolled = false;
-  window.addEventListener("scroll", () => {
-    if (!scrolled && window.scrollY > 20) {
-      scrollCue.classList.add("hidden");
-      scrolled = true;
-    }
+  // Scroll cue hide
+  const cue=document.querySelector(".scroll-cue");
+  let scrolled=false;
+  window.addEventListener("scroll",()=>{if(!scrolled&&scrollY>20){cue.classList.add("hidden");scrolled=true}});
+
+  // Sticky CTA
+  const cta=document.querySelector(".sticky-cta");
+  let shown=false;
+  window.addEventListener("scroll",()=>{
+    if(scrollY>400&&!shown){shown=true;setTimeout(()=>cta.classList.add("visible"),600)}
+    if(scrollY<200){cta.classList.remove("visible");shown=false}
   });
 
-  /* Sticky CTA */
-  const cta = document.querySelector(".sticky-cta");
-  let shown = false;
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400 && !shown) {
-      shown = true;
-      setTimeout(() => cta.classList.add("visible"), 600);
-    }
-    if (window.scrollY < 200) {
-      cta.classList.remove("visible");
-      shown = false;
-    }
-  });
-
-  /* Sequential animations */
-  const observeSequential = (elements) => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          elements.forEach((el, idx) => {
-            setTimeout(() => el.classList.add("visible"), idx * 140);
-          });
+  // Sequential reveal
+  const reveal=(els)=>{
+    const obs=new IntersectionObserver(e=>{
+      e.forEach(x=>{
+        if(x.isIntersecting){
+          els.forEach((el,i)=>setTimeout(()=>el.classList.add("visible"),i*140))
         }
-      });
-    }, { threshold: 0.3 });
-
-    elements.forEach(el => observer.observe(el));
+      })
+    },{threshold:.3});
+    els.forEach(el=>obs.observe(el));
   };
+  reveal(document.querySelectorAll(".project-card"));
+  reveal(document.querySelectorAll(".education-card"));
 
-  observeSequential(document.querySelectorAll(".project-card"));
-  observeSequential(document.querySelectorAll(".education-card"));
-
-  /* Active nav */
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 140) {
-        current = sec.id;
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle("active", link.dataset.section === current);
-    });
+  // Active nav
+  const secs=document.querySelectorAll("section"),links=document.querySelectorAll("nav a");
+  window.addEventListener("scroll",()=>{
+    let cur="";
+    secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id});
+    links.forEach(l=>l.classList.toggle("active",l.dataset.section===cur));
   });
 </script>
 
