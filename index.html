@@ -18,6 +18,7 @@
 
     a { color: #4ade80; text-decoration: none; }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -29,8 +30,12 @@
       z-index: 10;
     }
 
-    nav a { color: #aaa; }
-    nav a.active, nav a:hover {
+    nav a {
+      color: #aaa;
+    }
+
+    nav a.active,
+    nav a:hover {
       color: #fff;
       border-bottom: 1px solid #4ade80;
       padding-bottom: 4px;
@@ -52,11 +57,36 @@
       position: relative;
     }
 
-    .hello { color: #4ade80; font-size: 18px; }
-    h1 { font-size: 84px; font-weight: 800; min-height: 90px; }
-    .subtitle { font-size: 22px; color: #b5b5b5; max-width: 780px; }
-    .hero-highlight { font-size: 18px; color: #e5e5e5; margin-top: 12px; }
-    .currently { font-size: 16px; color: #9ca3af; }
+    .hello {
+      color: #4ade80;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 84px;
+      font-weight: 800;
+      line-height: 1.05;
+      min-height: 90px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #b5b5b5;
+      max-width: 780px;
+    }
+
+    .hero-highlight {
+      font-size: 18px;
+      color: #e5e5e5;
+      margin-top: 12px;
+    }
+
+    .currently {
+      font-size: 16px;
+      color: #9ca3af;
+    }
+
     .pill {
       margin-top: 28px;
       border: 1px solid #2a2a2a;
@@ -64,9 +94,10 @@
       border-radius: 999px;
       font-size: 13px;
       width: fit-content;
+      color: #cfcfcf;
     }
 
-    /* Scroll cue */
+    /* SCROLL CUE */
     .scroll-cue {
       position: absolute;
       bottom: 40px;
@@ -75,14 +106,32 @@
       font-size: 14px;
       color: #9ca3af;
       animation: pulse 2s infinite;
-      transition: opacity 0.4s;
-    }
-    .scroll-cue.hidden { opacity: 0; pointer-events: none; }
-    @keyframes pulse {
-      0%,100%{opacity:.4}50%{opacity:1}
+      transition: opacity 0.4s ease;
     }
 
-    h2 { font-size: 42px; margin-bottom: 24px; }
+    .scroll-cue.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%,100%{opacity:.4}
+      50%{opacity:1}
+    }
+
+    /* HEADINGS */
+    h2 {
+      font-size: 42px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 20px;
+      opacity: 0.85;
+    }
 
     /* ABOUT */
     .about-wrapper {
@@ -91,6 +140,7 @@
       gap: 48px;
       align-items: center;
     }
+
     .about-wrapper img {
       width: 100%;
       border-radius: 16px;
@@ -104,15 +154,17 @@
       gap: 24px;
       margin-top: 40px;
     }
+
     .project-card {
       background: #121212;
       border: 1px solid #222;
       padding: 24px;
       border-radius: 12px;
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(16px);
       transition: all 0.6s ease;
     }
+
     .project-card.visible {
       opacity: 1;
       transform: translateY(0);
@@ -125,15 +177,27 @@
       gap: 28px;
       margin-top: 40px;
     }
+
     .education-card {
       background: linear-gradient(145deg,#141414,#1b1b1b);
       border: 1px solid #222;
       padding: 28px 32px;
       border-radius: 16px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.6s ease;
     }
-    .education-card span { color: #b18c8c; }
 
-    /* Sticky CTA */
+    .education-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .education-card span {
+      color: #b18c8c;
+    }
+
+    /* STICKY CTA */
     .sticky-cta {
       position: fixed;
       bottom: 28px;
@@ -145,8 +209,9 @@
       font-size: 14px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.4s;
+      transition: opacity 0.4s ease;
     }
+
     .sticky-cta.visible {
       opacity: 1;
       pointer-events: auto;
@@ -159,10 +224,10 @@
       font-size: 14px;
     }
 
-    @media (max-width:768px){
-      h1{font-size:52px}
-      nav{position:static;justify-content:center}
-      .about-wrapper{grid-template-columns:1fr}
+    @media (max-width: 768px) {
+      h1 { font-size: 52px; }
+      nav { position: static; justify-content: center; }
+      .about-wrapper { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -177,6 +242,7 @@
   <a href="#contact" data-section="contact">CONTACT</a>
 </nav>
 
+<!-- HERO -->
 <section id="home" class="hero">
   <div class="hello">Hey there, I’m</div>
   <h1 id="animated-name"></h1>
@@ -199,20 +265,22 @@
   <div class="scroll-cue">↓ Scroll</div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2>About</h2>
+  <h2><span class="icon">👤</span> About</h2>
   <div class="about-wrapper">
     <img src="IMG_3487.jpg" alt="Kushal Challa">
     <p>
       I work at the intersection of finance, data, and business strategy.
       My focus is on budgeting, forecasting, SaaS metrics, and building
-      models that help leaders make confident decisions.
+      financial models that help leaders make confident decisions.
     </p>
   </div>
 </section>
 
+<!-- WORK -->
 <section id="work">
-  <h2>Work</h2>
+  <h2><span class="icon">🧠</span> Work</h2>
   <div class="projects-grid">
     <div class="project-card">📈 Financial Forecasting Models</div>
     <div class="project-card">📊 SaaS Metrics Dashboards</div>
@@ -220,8 +288,9 @@
   </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
-  <h2>Education</h2>
+  <h2><span class="icon">🎓</span> Education</h2>
   <div class="education-list">
 
     <div class="education-card">
@@ -240,8 +309,9 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2><span class="icon">✉️</span> Contact</h2>
   <p>📧 <a href="mailto:challakushal.2k@gmail.com">challakushal.2k@gmail.com</a></p>
   <p>📱 <a href="tel:+919182048891">+91 91820 48891</a></p>
   <p>💼 <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">LinkedIn</a></p>
@@ -249,43 +319,78 @@
 
 <footer>© 2026 Kushal Challa</footer>
 
-<div class="sticky-cta"><a href="#work">View my work</a></div>
+<div class="sticky-cta">
+  <a href="#work">View my work</a>
+</div>
 
 <script>
-  // Name animation
-  const name="Kushal Challa",el=document.getElementById("animated-name");
-  let i=0;(()=>{if(i<name.length){el.textContent+=name[i++];setTimeout(arguments.callee,70)}})();
+  /* Name animation */
+  const nameText = "Kushal Challa";
+  const nameEl = document.getElementById("animated-name");
+  let i = 0;
+  (function typeName() {
+    if (i < nameText.length) {
+      nameEl.textContent += nameText.charAt(i++);
+      setTimeout(typeName, 70);
+    }
+  })();
 
-  // Scroll cue hide
-  const cue=document.querySelector(".scroll-cue");
-  let scrolled=false;
-  window.addEventListener("scroll",()=>{if(!scrolled&&scrollY>20){cue.classList.add("hidden");scrolled=true}});
-
-  // Sticky CTA delay
-  const cta=document.querySelector(".sticky-cta");
-  let shown=false;
-  window.addEventListener("scroll",()=>{
-    if(scrollY>400&&!shown){shown=true;setTimeout(()=>cta.classList.add("visible"),600)}
-    if(scrollY<200){cta.classList.remove("visible");shown=false}
+  /* Scroll cue hide */
+  const scrollCue = document.querySelector(".scroll-cue");
+  let scrolled = false;
+  window.addEventListener("scroll", () => {
+    if (!scrolled && window.scrollY > 20) {
+      scrollCue.classList.add("hidden");
+      scrolled = true;
+    }
   });
 
-  // Project stagger
-  const cards=document.querySelectorAll(".project-card");
-  const obs=new IntersectionObserver(e=>{
-    e.forEach(x=>{
-      if(x.isIntersecting){
-        cards.forEach((c,i)=>setTimeout(()=>c.classList.add("visible"),i*150))
-      }
-    })
-  },{threshold:.3});
-  cards.forEach(c=>obs.observe(c));
+  /* Sticky CTA */
+  const cta = document.querySelector(".sticky-cta");
+  let shown = false;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400 && !shown) {
+      shown = true;
+      setTimeout(() => cta.classList.add("visible"), 600);
+    }
+    if (window.scrollY < 200) {
+      cta.classList.remove("visible");
+      shown = false;
+    }
+  });
 
-  // Active nav
-  const secs=document.querySelectorAll("section"),links=document.querySelectorAll("nav a");
-  window.addEventListener("scroll",()=>{
-    let cur="";
-    secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id});
-    links.forEach(l=>l.classList.toggle("active",l.dataset.section===cur));
+  /* Sequential animations */
+  const observeSequential = (elements) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          elements.forEach((el, idx) => {
+            setTimeout(() => el.classList.add("visible"), idx * 140);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    elements.forEach(el => observer.observe(el));
+  };
+
+  observeSequential(document.querySelectorAll(".project-card"));
+  observeSequential(document.querySelectorAll(".education-card"));
+
+  /* Active nav */
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 140) {
+        current = sec.id;
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle("active", link.dataset.section === current);
+    });
   });
 </script>
 
