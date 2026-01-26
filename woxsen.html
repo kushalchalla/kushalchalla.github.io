@@ -6,69 +6,272 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, Arial, sans-serif;
-      background: #0b0b0b;
+      background: radial-gradient(circle at top, #111 0%, #0b0b0b 60%);
       color: #f5f5f5;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
       padding: 80px 24px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a { color: #4ade80; text-decoration: none; }
-    h1 { font-size: 42px; margin-bottom: 12px; }
-    h2 { margin-top: 40px; font-size: 26px; }
 
-    .card {
-      background: #121212;
-      border: 1px solid #222;
-      border-radius: 14px;
-      padding: 24px;
-      margin-top: 20px;
+    .back {
+      font-size: 14px;
+      margin-bottom: 32px;
+      display: inline-block;
+      color: #9ca3af;
     }
 
-    ul { margin-left: 20px; }
-    .back { font-size: 14px; display: inline-block; margin-bottom: 32px; }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: #b5b5b5;
+      margin-bottom: 48px;
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 18px;
+      opacity: 0.85;
+    }
+
+    /* CARD */
+    .card {
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.01)
+      );
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 44px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    /* BULLET ANIMATION */
+    ul {
+      margin-left: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #e5e7eb;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.5s ease;
+    }
+
+    li.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-link {
+      display: block;
+      margin-top: 4px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    .project-link a {
+      color: #4ade80;
+    }
+
+    .highlight {
+      color: #4ade80;
+      font-weight: 600;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+      );
+      margin: 56px 0;
+    }
+
+    /* TAKEAWAYS */
+    .takeaways {
+      background: linear-gradient(
+        145deg,
+        rgba(74,222,128,0.08),
+        rgba(74,222,128,0.02)
+      );
+      border: 1px solid rgba(74,222,128,0.25);
+      border-radius: 18px;
+      padding: 32px;
+      margin-top: 64px;
+    }
+
+    .takeaways h2 {
+      margin-bottom: 20px;
+    }
+
+    .note {
+      margin-top: 56px;
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 38px; }
+      body { padding: 64px 20px; }
+    }
   </style>
 </head>
 
 <body>
 
-<a href="index.html" class="back">← Back to home</a>
+  <a href="index.html" class="back">← Back to home</a>
 
-<h1>Woxsen University</h1>
-<p><strong>MBA in Financial Services & MSc in Finance</strong></p>
+  <h1>Woxsen University</h1>
+  <p class="subtitle">
+    <strong>MBA in Financial Services & MSc in Finance</strong>
+  </p>
 
-<div class="card">
-  <h2>Core Subjects</h2>
-  <ul>
-    <li>Corporate Finance</li>
-    <li>Financial Management</li>
-    <li>Investment Analysis & Portfolio Management</li>
-    <li>Derivatives & Risk Management</li>
-    <li>Financial Markets & Instruments</li>
-    <li>Business Analytics</li>
-  </ul>
-</div>
+  <!-- CORE SUBJECTS -->
+  <div class="card">
+    <h2><span class="icon">📘</span> Core Subjects</h2>
+    <ul class="animate-list">
+      <li>
+        Macro Economic Analysis
+        <span class="project-link">
+          Project: Global macro impact on equity valuations
+        </span>
+      </li>
+      <li>
+        Corporate Finance
+        <span class="project-link">
+          Project: DCF & capital structure optimization models
+        </span>
+      </li>
+      <li>
+        Mergers, Buyouts & Corporate Restructurings
+        <span class="project-link">
+          Project: Buyout valuation & synergy analysis
+        </span>
+      </li>
+      <li>
+        Quantitative Security Analysis
+        <span class="project-link">
+          Project: Factor-based equity screening model
+        </span>
+      </li>
+      <li>
+        Financial Derivatives & Risk Management
+        <span class="project-link">
+          Project: Options strategies & risk hedging simulations
+        </span>
+      </li>
+      <li>
+        Investment Banking
+        <span class="project-link">
+          Project: IPO valuation & pitch-book analysis
+        </span>
+      </li>
+      <li>
+        Trading, Hedging Strategies & Data Backtesting
+        <span class="project-link">
+          Project: Strategy backtesting using historical market data
+        </span>
+      </li>
+      <li>
+        Machine Learning in Financial Services
+        <span class="project-link">
+          Project: ML-based return prediction & signal generation
+        </span>
+      </li>
+    </ul>
+  </div>
 
-<div class="card">
-  <h2>Grades</h2>
-  <ul>
-    <li>CGPA: —</li>
-    <li>Consistent top performance in finance electives</li>
-  </ul>
-</div>
+  <div class="divider"></div>
 
-<div class="card">
-  <h2>Achievements & Projects</h2>
-  <ul>
-    <li>Built detailed financial models for academic case studies</li>
-    <li>Completed valuation and forecasting projects</li>
-    <li>Participated in finance and analytics competitions</li>
-    <li>Applied analytics techniques to real-world business problems</li>
-  </ul>
-</div>
+  <!-- GRADES -->
+  <div class="card">
+    <h2><span class="icon">🎓</span> Academic Performance</h2>
+    <ul class="animate-list">
+      <li><span class="highlight">CGPA:</span> 3.64</li>
+      <li><span class="highlight">Finance:</span> Top of the class</li>
+      <li><span class="highlight">Overall:</span> Runner-up in cohort</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="card">
+    <h2><span class="icon">🏆</span> Achievements & Leadership</h2>
+    <ul class="animate-list">
+      <li>Dean’s List candidate</li>
+      <li>Built financial models for academic & real-world case studies</li>
+      <li>Runner-up in Bloomberg trading challenges</li>
+      <li>Captain of the University’s volleyball team</li>
+      <li>Interim President of the Finance Club</li>
+    </ul>
+  </div>
+
+  <!-- TAKEAWAYS -->
+  <div class="takeaways">
+    <h2><span class="icon">🧠</span> Key Takeaways for Executives</h2>
+    <ul class="animate-list">
+      <li>Strong grounding in corporate finance, markets, and macroeconomic drivers</li>
+      <li>Hands-on experience translating theory into decision-ready financial models</li>
+      <li>Comfortable working with data, analytics, and machine learning in finance</li>
+      <li>Proven leadership, teamwork, and competitive mindset</li>
+    </ul>
+  </div>
+
+  <p class="note">
+    This page highlights academic depth, applied finance skills, and leadership capability.
+  </p>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const lists = document.querySelectorAll('.animate-list');
+
+    lists.forEach(list => {
+      const items = list.querySelectorAll('li');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            items.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('visible');
+              }, index * 120);
+            });
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(list);
+    });
+  </script>
 
 </body>
 </html>
