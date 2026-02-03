@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power BI Dashboards | Kushal Challa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #1a1d29 0%, #0f1115 60%);
+      color: #f5f5f5;
+      line-height: 1.65;
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 32px;
+    }
+
+    a {
+      color: #4ade80;
+      text-decoration: none;
+    }
+
+    .back {
+      font-size: 14px;
+      color: #9ca3af;
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: #c7c7d1;
+      font-size: 18px;
+      max-width: 720px;
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 20px;
+      opacity: 0.85;
+    }
+
+    .card {
+      background: #151822;
+      border: 1px solid #23263a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    ul {
+      margin-left: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #e5e7eb;
+    }
+
+    .highlight {
+      color: #4ade80;
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #0f1115;
+      border: 1px solid #23263a;
+      color: #d4d4d8;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+      );
+      margin: 64px 0;
+    }
+
+    .note {
+      margin-top: 64px;
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 38px; }
+      body { padding: 80px 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="back">← Back to home</a>
+
+  <h1>Power BI Dashboards</h1>
+  <p class="subtitle">
+    Designing executive-ready dashboards that translate complex financial
+    data into clear, actionable business insights.
+  </p>
+
+  <!-- OVERVIEW -->
+  <div class="card">
+    <h2><span class="icon">📊</span> Overview</h2>
+    <p>
+      I use Power BI as a decision-support tool — not just for reporting.
+      My dashboards are built to answer <span class="highlight">specific business questions</span>,
+      highlight trends, and support leadership discussions.
+    </p>
+  </div>
+
+  <!-- DASHBOARD TYPES -->
+  <div class="card">
+    <h2><span class="icon">📈</span> Dashboards Built</h2>
+    <ul>
+      <li>FP&A performance dashboards (Actuals vs Budget vs Forecast)</li>
+      <li>Monthly & quarterly management reporting</li>
+      <li>Revenue, cost, and margin analysis dashboards</li>
+      <li>Scenario & variance analysis views</li>
+      <li>Trend tracking and KPI monitoring</li>
+    </ul>
+
+    <div class="pill-row">
+      <div class="pill">Financial Planning</div>
+      <div class="pill">Variance Analysis</div>
+      <div class="pill">Forecast Tracking</div>
+      <div class="pill">Executive Reporting</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- DATA & MODELING -->
+  <div class="card">
+    <h2><span class="icon">🧮</span> Data & Modeling</h2>
+    <ul>
+      <li>Data modeling with star schema principles</li>
+      <li>DAX measures for financial KPIs and ratios</li>
+      <li>Integration with Excel, CSV, and SQL-based sources</li>
+      <li>Time intelligence for YTD, QoQ, and YoY analysis</li>
+    </ul>
+
+    <div class="pill-row">
+      <div class="pill">DAX</div>
+      <div class="pill">Power Query</div>
+      <div class="pill">Data Modeling</div>
+      <div class="pill">Time Intelligence</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BUSINESS IMPACT -->
+  <div class="card">
+    <h2><span class="icon">🎯</span> Business Impact</h2>
+    <ul>
+      <li>Reduced time spent on manual reporting and reconciliations</li>
+      <li>Improved visibility into financial performance drivers</li>
+      <li>Enabled faster decision-making during planning cycles</li>
+      <li>Created a single source of truth for FP&A stakeholders</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="card">
+    <h2><span class="icon">💡</span> Key Takeaways (for Executives)</h2>
+    <ul>
+      <li>Dashboards are designed around decisions, not just metrics</li>
+      <li>Clear variance explanations matter more than visual complexity</li>
+      <li>Consistency and trust in numbers drive adoption</li>
+    </ul>
+  </div>
+
+  <p class="note">
+    Screenshots and detailed dashboard walkthroughs can be shared on request.
+  </p>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
 
