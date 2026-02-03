@@ -1,1 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python & SQL Analysis | Kushal Challa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #1a1d29 0%, #0f1115 60%);
+      color: #f5f5f5;
+      line-height: 1.65;
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 32px;
+    }
+
+    a {
+      color: #4ade80;
+      text-decoration: none;
+    }
+
+    .back {
+      font-size: 14px;
+      color: #9ca3af;
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: #c7c7d1;
+      font-size: 18px;
+      max-width: 760px;
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 20px;
+      opacity: 0.85;
+    }
+
+    .card {
+      background: #151822;
+      border: 1px solid #23263a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    ul {
+      margin-left: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #e5e7eb;
+    }
+
+    .highlight {
+      color: #4ade80;
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #0f1115;
+      border: 1px solid #23263a;
+      color: #d4d4d8;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+      );
+      margin: 64px 0;
+    }
+
+    .note {
+      margin-top: 64px;
+      font-size: 14px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 38px; }
+      body { padding: 80px 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="back">← Back to home</a>
+
+  <h1>Python & SQL Analysis</h1>
+  <p class="subtitle">
+    Using Python and SQL to clean, transform, analyze, and validate financial
+    data — enabling reliable inputs for forecasting, dashboards, and decisions.
+  </p>
+
+  <!-- OVERVIEW -->
+  <div class="card">
+    <h2><span class="icon">🐍</span> Overview</h2>
+    <p>
+      I use Python and SQL primarily as
+      <span class="highlight">analytical and data-preparation tools</span>
+      to support FP&A, forecasting, and reporting workflows.
+      The focus is on accuracy, reproducibility, and speed — not over-engineering.
+    </p>
+  </div>
+
+  <!-- SQL -->
+  <div class="card">
+    <h2><span class="icon">🗄️</span> SQL Capabilities</h2>
+    <ul>
+      <li>Writing optimized queries to extract financial and operational data</li>
+      <li>Joining multiple tables to build analysis-ready datasets</li>
+      <li>Time-based aggregations for monthly, quarterly, and YTD analysis</li>
+      <li>Data validation and reconciliation against source systems</li>
+      <li>Creating reusable views for reporting and dashboards</li>
+    </ul>
+
+    <div class="pill-row">
+      <div class="pill">Joins</div>
+      <div class="pill">CTEs</div>
+      <div class="pill">Window Functions</div>
+      <div class="pill">Aggregations</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PYTHON -->
+  <div class="card">
+    <h2><span class="icon">📐</span> Python Analysis</h2>
+    <ul>
+      <li>Data cleaning and transformation using pandas</li>
+      <li>Exploratory data analysis for trend and variance detection</li>
+      <li>Back-testing financial and trading strategies</li>
+      <li>Automating recurring analysis and data preparation tasks</li>
+      <li>Basic machine learning applications for financial use cases</li>
+    </ul>
+
+    <div class="pill-row">
+      <div class="pill">pandas</div>
+      <div class="pill">NumPy</div>
+      <div class="pill">Matplotlib</div>
+      <div class="pill">Back-testing</div>
+      <div class="pill">ML (Basics)</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- USE CASES -->
+  <div class="card">
+    <h2><span class="icon">⚙️</span> Typical Use Cases</h2>
+    <ul>
+      <li>Preparing clean historical datasets for forecasting models</li>
+      <li>Validating forecast assumptions against actual performance</li>
+      <li>Supporting Power BI dashboards with reliable data pipelines</li>
+      <li>Analyzing large datasets not suitable for Excel alone</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BUSINESS IMPACT -->
+  <div class="card">
+    <h2><span class="icon">🎯</span> Business Impact</h2>
+    <ul>
+      <li>Reduced manual effort in data preparation and reconciliation</li>
+      <li>Improved confidence in numbers used for planning and reporting</li>
+      <li>Faster turnaround for ad-hoc analysis requests</li>
+      <li>Enabled scalable analytics beyond spreadsheet limitations</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TAKEAWAYS -->
+  <div class="card">
+    <h2><span class="icon">💡</span> Key Takeaways (for Executives)</h2>
+    <ul>
+      <li>Clean data is a prerequisite for reliable financial decisions</li>
+      <li>Python and SQL complement — not replace — Excel and BI tools</li>
+      <li>Automation improves consistency and reduces operational risk</li>
+    </ul>
+  </div>
+
+  <p class="note">
+    Code samples and notebooks can be shared on request.
+  </p>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
 
