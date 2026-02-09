@@ -203,7 +203,6 @@
       transform: translateY(0);
     }
 
-    /* Clickable education card (Woxsen) */
     .education-card.clickable {
       cursor: pointer;
     }
@@ -290,7 +289,7 @@
 <section id="about">
   <h2><span class="icon">👤</span> About</h2>
   <div class="about-wrapper">
-    <img src="IMG_3487.jpg" alt="Kushal Challa">
+    <img src="kushal.png" alt="Kushal Challa">
     <p>
       I bring <strong>3+ years of experience in the FP&A domain</strong>,
       working hands-on across budgeting, forecasting, and performance analysis.
@@ -305,27 +304,10 @@
 <!-- WORK -->
 <section id="work">
   <h2><span class="icon">🧠</span> Work</h2>
-
   <div class="projects-grid">
-
-    <a href="forecasting.html">
-      <div class="project-card">
-        📈 Financial Forecasting Models
-      </div>
-    </a>
-
-    <a href="powerbi.html">
-      <div class="project-card">
-        📊 Power BI Dashboards
-      </div>
-    </a>
-
-    <a href="python-sql.html">
-      <div class="project-card">
-        ⚙️ Python & SQL Analysis
-      </div>
-    </a>
-
+    <a href="forecasting.html"><div class="project-card">📈 Financial Forecasting Models</div></a>
+    <a href="powerbi.html"><div class="project-card">📊 Power BI Dashboards</div></a>
+    <a href="python-sql.html"><div class="project-card">⚙️ Python & SQL Analysis</div></a>
   </div>
 </section>
 
@@ -333,19 +315,16 @@
 <section id="education">
   <h2><span class="icon">🎓</span> Education</h2>
   <div class="education-list">
-
     <a href="woxsen.html">
       <div class="education-card clickable">
         <h3>Woxsen University <span>– Hyderabad</span></h3>
         <p>MBA in Financial Services & MSc in Finance</p>
       </div>
     </a>
-
     <div class="education-card">
       <h3>Bennett University <span>– New Delhi</span></h3>
       <p>B.Tech in Computer Science</p>
     </div>
-
   </div>
 </section>
 
@@ -359,21 +338,16 @@
 
 <footer>© 2026 Kushal Challa</footer>
 
-<div class="sticky-cta">
-  <a href="#work">View my work</a>
-</div>
+<div class="sticky-cta"><a href="#work">View my work</a></div>
 
 <script>
-  // Name animation
   const nameText="Kushal Challa",el=document.getElementById("animated-name");
   let i=0;(function t(){if(i<nameText.length){el.textContent+=nameText[i++];setTimeout(t,70)}})();
 
-  // Scroll cue hide
   const cue=document.querySelector(".scroll-cue");
   let scrolled=false;
   window.addEventListener("scroll",()=>{if(!scrolled&&scrollY>20){cue.classList.add("hidden");scrolled=true}});
 
-  // Sticky CTA
   const cta=document.querySelector(".sticky-cta");
   let shown=false;
   window.addEventListener("scroll",()=>{
@@ -381,7 +355,6 @@
     if(scrollY<200){cta.classList.remove("visible");shown=false}
   });
 
-  // Sequential reveal
   const reveal=(els)=>{
     const obs=new IntersectionObserver(e=>{
       e.forEach(x=>{
@@ -395,7 +368,6 @@
   reveal(document.querySelectorAll(".project-card"));
   reveal(document.querySelectorAll(".education-card"));
 
-  // Active nav
   const secs=document.querySelectorAll("section"),links=document.querySelectorAll("nav a");
   window.addEventListener("scroll",()=>{
     let cur="";
