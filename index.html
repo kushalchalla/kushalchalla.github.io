@@ -171,6 +171,7 @@
 
     .project-card:hover {
       border-color: #4ade80;
+      box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.4);
       transform: translateY(12px);
     }
 
@@ -200,6 +201,17 @@
     .education-card.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Clickable education card (Woxsen) */
+    .education-card.clickable {
+      cursor: pointer;
+    }
+
+    .education-card.clickable:hover {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.4);
+      transform: translateY(-4px);
     }
 
     .education-card span {
@@ -321,14 +333,19 @@
 <section id="education">
   <h2><span class="icon">🎓</span> Education</h2>
   <div class="education-list">
-    <div class="education-card">
-      <h3><a href="woxsen.html">Woxsen University</a> <span>– Hyderabad</span></h3>
-      <p>MBA in Financial Services & MSc in Finance</p>
-    </div>
+
+    <a href="woxsen.html">
+      <div class="education-card clickable">
+        <h3>Woxsen University <span>– Hyderabad</span></h3>
+        <p>MBA in Financial Services & MSc in Finance</p>
+      </div>
+    </a>
+
     <div class="education-card">
       <h3>Bennett University <span>– New Delhi</span></h3>
       <p>B.Tech in Computer Science</p>
     </div>
+
   </div>
 </section>
 
