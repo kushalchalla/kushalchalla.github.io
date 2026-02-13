@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Kushal Challa | Senior FP&A Analyst</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0f1115;
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #1a1d29 0%, #0f1115 60%);
       color: #f5f5f5;
+      line-height: 1.6;
     }
 
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 20px 40px;
+      padding: 22px 48px;
       display: flex;
-      gap: 24px;
-      background: rgba(15,17,21,0.9);
+      gap: 28px;
+      font-size: 14px;
+      background: rgba(15,17,21,0.6);
+      backdrop-filter: blur(10px);
       z-index: 10;
     }
 
     nav a {
       color: #a1a1aa;
-      text-decoration: none;
-      font-size: 14px;
+      font-weight: 500;
     }
 
+    nav a.active,
     nav a:hover {
       color: #fff;
       border-bottom: 2px solid #4ade80;
-      padding-bottom: 4px;
+      padding-bottom: 6px;
     }
 
     section {
@@ -44,20 +50,90 @@
       padding: 140px 40px;
     }
 
-    h1 {
-      font-size: 64px;
-      margin-bottom: 16px;
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+      position: relative;
     }
 
-    h2 {
-      font-size: 40px;
-      margin-bottom: 24px;
+    .hello {
+      color: #4ade80;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 84px;
+      font-weight: 800;
+      line-height: 1.05;
+      min-height: 90px;
     }
 
     .subtitle {
-      font-size: 20px;
+      font-size: 22px;
       color: #c7c7d1;
-      max-width: 700px;
+      max-width: 780px;
+    }
+
+    .hero-highlight {
+      font-size: 18px;
+      color: #e5e5e5;
+    }
+
+    .currently {
+      font-size: 16px;
+      color: #a1a1aa;
+    }
+
+    .pill {
+      margin-top: 28px;
+      background: #151822;
+      border: 1px solid #23263a;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      width: fit-content;
+      color: #d4d4d8;
+    }
+
+    /* SCROLL CUE */
+    .scroll-cue {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: #9ca3af;
+      animation: pulse 2s infinite;
+      transition: opacity 0.4s ease;
+    }
+
+    .scroll-cue.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%,100%{opacity:.4}
+      50%{opacity:1}
+    }
+
+    /* HEADINGS */
+    h2 {
+      font-size: 42px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 20px;
+      opacity: 0.85;
     }
 
     /* ABOUT */
@@ -70,35 +146,108 @@
 
     .about-wrapper img {
       width: 100%;
-      height: auto;
       border-radius: 16px;
-      border: 2px solid #4ade80; /* visual confirmation */
-      background: #1f2937;
-      display: block;
+      border: 1px solid #23263a;
     }
 
-    .pill {
-      margin-top: 20px;
+    /* WORK */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .project-card {
       background: #151822;
       border: 1px solid #23263a;
-      padding: 8px 16px;
+      padding: 28px;
+      border-radius: 14px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.6s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.4);
+      transform: translateY(12px);
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* EDUCATION */
+    .education-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .education-card {
+      background: #151822;
+      border: 1px solid #23263a;
+      padding: 28px 32px;
+      border-radius: 16px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.6s ease;
+    }
+
+    .education-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .education-card.clickable {
+      cursor: pointer;
+    }
+
+    .education-card.clickable:hover {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .education-card span {
+      color: #9ca3af;
+    }
+
+    /* STICKY CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #151822;
+      border: 1px solid #23263a;
+      padding: 10px 18px;
       border-radius: 999px;
-      font-size: 13px;
-      width: fit-content;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .sticky-cta.visible {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     footer {
       text-align: center;
       padding: 40px;
-      font-size: 14px;
       color: #9ca3af;
+      font-size: 14px;
     }
 
     @media (max-width: 768px) {
-      .about-wrapper {
-        grid-template-columns: 1fr;
-      }
-      h1 { font-size: 46px; }
+      h1 { font-size: 52px; }
+      nav { justify-content: center; }
+      .about-wrapper { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -106,66 +255,121 @@
 <body>
 
 <nav>
-  <a href="#home">HOME</a>
-  <a href="#about">ABOUT</a>
-  <a href="#work">WORK</a>
-  <a href="#education">EDUCATION</a>
-  <a href="#contact">CONTACT</a>
+  <a href="#home" data-section="home">HOME</a>
+  <a href="#about" data-section="about">ABOUT</a>
+  <a href="#work" data-section="work">WORK</a>
+  <a href="#education" data-section="education">EDUCATION</a>
+  <a href="#contact" data-section="contact">CONTACT</a>
 </nav>
 
-<section id="home">
-  <h1>Kushal Challa</h1>
+<section id="home" class="hero">
+  <div class="hello">Hey there, I’m</div>
+  <h1 id="animated-name"></h1>
+
   <p class="subtitle">
     Senior FP&A Analyst building decision-intelligence through
-    financial models, forecasting, and analytics.
+    financial models, forecasting systems, and business insights.
   </p>
-  <div class="pill">Finance • Forecasting • Power BI • Python</div>
+
+  <div class="hero-highlight">
+    → Turning financial data into clear, executive-ready decisions.
+  </div>
+
+  <div class="currently">
+    <strong>Currently:</strong> Working on budgeting, forecasting,
+    and back-testing strategies across FP&A cycles.
+  </div>
+
+  <div class="pill">📊 Finance • Analytics • Forecasting • Power BI</div>
+  <div class="scroll-cue">↓ Scroll</div>
 </section>
 
 <section id="about">
-  <h2>About</h2>
-
+  <h2><span class="icon">👤</span> About</h2>
   <div class="about-wrapper">
-    <!-- IMAGE: THIS IS THE KEY LINE -->
-    <img src="./kushal.jpg" alt="Kushal Challa">
-
+    <img src="kushal.jpg" alt="Kushal Challa">
     <p>
       I bring <strong>3+ years of experience in the FP&A domain</strong>,
       working hands-on across budgeting, forecasting, and performance analysis.
       <br><br>
-      I’ve built and back-tested financial strategies, supported planning cycles,
-      and developed models that are practical, decision-ready,
+      I’ve built and back-tested financial strategies, supported planning
+      cycles, and developed models that are practical, decision-ready,
       and aligned with leadership needs.
     </p>
   </div>
 </section>
 
 <section id="work">
-  <h2>Work</h2>
-  <p>Financial Forecasting Models · Power BI Dashboards · Python & SQL Analysis</p>
+  <h2><span class="icon">🧠</span> Work</h2>
+  <div class="projects-grid">
+    <a href="forecasting.html"><div class="project-card">📈 Financial Forecasting Models</div></a>
+    <a href="powerbi.html"><div class="project-card">📊 Power BI Dashboards</div></a>
+    <a href="python-sql.html"><div class="project-card">⚙️ Python & SQL Analysis</div></a>
+  </div>
 </section>
 
 <section id="education">
-  <h2>Education</h2>
-  <p>Woxsen University – MBA (Finance)</p>
-  <p>Bennett University – B.Tech (Computer Science)</p>
+  <h2><span class="icon">🎓</span> Education</h2>
+  <div class="education-list">
+    <a href="woxsen.html">
+      <div class="education-card clickable">
+        <h3>Woxsen University <span>– Hyderabad</span></h3>
+        <p>MBA in Financial Services & MSc in Finance</p>
+      </div>
+    </a>
+    <div class="education-card">
+      <h3>Bennett University <span>– New Delhi</span></h3>
+      <p>B.Tech in Computer Science</p>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: challakushal.2k@gmail.com</p>
-  <p>Phone: +91 9182048891</p>
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">
-      linkedin.com/in/kushalchalla
-    </a>
-  </p>
+  <h2><span class="icon">✉️</span> Contact</h2>
+  <p>📧 <a href="mailto:challakushal.2k@gmail.com">challakushal.2k@gmail.com</a></p>
+  <p>📱 <a href="tel:+919182048891">+91 91820 48891</a></p>
+  <p>💼 <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">LinkedIn</a></p>
 </section>
 
-<footer>
-  © 2026 Kushal Challa
-</footer>
+<footer>© 2026 Kushal Challa</footer>
+
+<div class="sticky-cta"><a href="#work">View my work</a></div>
+
+<script>
+  const nameText="Kushal Challa",el=document.getElementById("animated-name");
+  let i=0;(function t(){if(i<nameText.length){el.textContent+=nameText[i++];setTimeout(t,70)}})();
+
+  const cue=document.querySelector(".scroll-cue");
+  let scrolled=false;
+  window.addEventListener("scroll",()=>{if(!scrolled&&scrollY>20){cue.classList.add("hidden");scrolled=true}});
+
+  const cta=document.querySelector(".sticky-cta");
+  let shown=false;
+  window.addEventListener("scroll",()=>{
+    if(scrollY>400&&!shown){shown=true;setTimeout(()=>cta.classList.add("visible"),600)}
+    if(scrollY<200){cta.classList.remove("visible");shown=false}
+  });
+
+  const reveal=(els)=>{
+    const obs=new IntersectionObserver(e=>{
+      e.forEach(x=>{
+        if(x.isIntersecting){
+          els.forEach((el,i)=>setTimeout(()=>el.classList.add("visible"),i*140))
+        }
+      })
+    },{threshold:.3});
+    els.forEach(el=>obs.observe(el));
+  };
+  reveal(document.querySelectorAll(".project-card"));
+  reveal(document.querySelectorAll(".education-card"));
+
+  const secs=document.querySelectorAll("section"),links=document.querySelectorAll("nav a");
+  window.addEventListener("scroll",()=>{
+    let cur="";
+    secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id});
+    links.forEach(l=>l.classList.toggle("active",l.dataset.section===cur));
+  });
+</script>
 
 </body>
 </html>
