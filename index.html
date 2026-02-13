@@ -1,315 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio – About</title>
+  <meta charset="UTF-8">
+  <title>Kushal Challa | Senior FP&A Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-/* ================================
-   GLOBAL RESET & BEHAVIOR
-================================ */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #f5f5f5;
+    }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-}
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      gap: 24px;
+      background: rgba(15,17,21,0.9);
+      z-index: 10;
+    }
 
-body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top, #020617, #000);
-  color: #e5e7eb;
-  line-height: 1.8;
-  overflow-x: hidden;
-}
+    nav a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-/* ================================
-   CUSTOM SCROLLBAR
-================================ */
-::-webkit-scrollbar {
-  width: 10px;
-}
+    nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #4ade80;
+      padding-bottom: 4px;
+    }
 
-::-webkit-scrollbar-track {
-  background: #020617;
-}
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 140px 40px;
+    }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
-  border-radius: 10px;
-}
+    h1 {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
 
-/* ================================
-   TEXT SELECTION
-================================ */
-::selection {
-  background: #38bdf8;
-  color: #020617;
-}
+    h2 {
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
 
-/* ================================
-   LAYOUT
-================================ */
-.section {
-  min-height: 100vh;
-  scroll-snap-align: start;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 24px;
-}
+    .subtitle {
+      font-size: 20px;
+      color: #c7c7d1;
+      max-width: 700px;
+    }
 
-.container {
-  max-width: 980px;
-  width: 100%;
-}
+    /* ABOUT */
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
 
-/* ================================
-   GLASS CARD
-================================ */
-.card {
-  position: relative;
-  padding: 56px;
-  border-radius: 24px;
-  background: rgba(2, 6, 23, 0.7);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  box-shadow:
-    0 40px 80px rgba(0, 0, 0, 0.6),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-  animation: fadeUp 0.9s ease forwards;
-}
+    .about-wrapper img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      border: 2px solid #4ade80; /* visual confirmation */
+      background: #1f2937;
+      display: block;
+    }
 
-/* Gradient border glow */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(56,189,248,0.35),
-    transparent 40%,
-    rgba(14,165,233,0.35)
-  );
-  z-index: -1;
-}
+    .pill {
+      margin-top: 20px;
+      background: #151822;
+      border: 1px solid #23263a;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      width: fit-content;
+    }
 
-/* ================================
-   TYPOGRAPHY
-================================ */
-h1 {
-  font-size: clamp(2.2rem, 3vw, 3rem);
-  margin-bottom: 28px;
-  letter-spacing: -0.03em;
-}
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
 
-p {
-  font-size: 1.05rem;
-  color: #cbd5f5;
-  margin-bottom: 26px;
-}
-
-strong {
-  color: #38bdf8;
-  font-weight: 600;
-}
-
-/* ================================
-   CTA BUTTON
-================================ */
-.cta {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 32px;
-  padding: 16px 34px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  color: #020617;
-  font-weight: 700;
-  text-decoration: none;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.45);
-}
-
-.cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 30px 70px rgba(56, 189, 248, 0.7);
-}
-
-/* Ripple effect */
-.cta::after {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: rgba(255,255,255,0.25);
-  top: -110%;
-  left: -10%;
-  transform: rotate(15deg);
-  transition: top 0.6s ease;
-}
-
-.cta:hover::after {
-  top: 110%;
-}
-
-/* ================================
-   SCROLL INDICATOR
-================================ */
-.scroll-hint {
-  margin-top: 48px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #94a3b8;
-  animation: bounce 1.6s infinite;
-}
-
-/* ================================
-   WORK SECTION
-================================ */
-#work .card {
-  margin-top: 40px;
-}
-
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-}
-
-.work-item {
-  padding: 28px;
-  border-radius: 18px;
-  background: rgba(2, 6, 23, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.12);
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.work-item:hover {
-  transform: translateY(-6px);
-  border-color: #38bdf8;
-}
-
-.work-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.work-desc {
-  font-size: 0.95rem;
-  color: #94a3b8;
-}
-
-/* ================================
-   ANIMATIONS
-================================ */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
-
-/* ================================
-   RESPONSIVE
-================================ */
-@media (max-width: 768px) {
-  .card {
-    padding: 36px 28px;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-}
-
-</style>
+    @media (max-width: 768px) {
+      .about-wrapper {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 46px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="section">
-  <div class="container">
-    <div class="card">
-      <h1>About Me</h1>
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#work">WORK</a>
+  <a href="#education">EDUCATION</a>
+  <a href="#contact">CONTACT</a>
+</nav>
 
-      <p>
-        I bring <strong>3+ years of experience in the FP&A domain</strong>, with hands-on exposure
-        to budgeting, forecasting, and performance analysis across business cycles.
-      </p>
+<section id="home">
+  <h1>Kushal Challa</h1>
+  <p class="subtitle">
+    Senior FP&A Analyst building decision-intelligence through
+    financial models, forecasting, and analytics.
+  </p>
+  <div class="pill">Finance • Forecasting • Power BI • Python</div>
+</section>
 
-      <p>
-        I have built and back-tested financial and analytical strategies, supported end-to-end
-        planning cycles, and developed decision-ready models aligned with leadership needs.
-      </p>
+<section id="about">
+  <h2>About</h2>
 
-      <p>
-        I have developed quantitative strategies delivering a
-        <strong>70% win rate and ~30% CAGR</strong> across market cycles.
-      </p>
+  <div class="about-wrapper">
+    <!-- IMAGE: THIS IS THE KEY LINE -->
+    <img src="./kushal.jpg" alt="Kushal Challa">
 
-      <p>
-        Power BI dashboarding expert with advanced Excel skills and hands-on Python automation
-        experience, enabling KPI-led, data-driven business growth.
-      </p>
-
-      <a href="#work" class="cta">View My Work</a>
-      <div class="scroll-hint">Scroll ↓</div>
-    </div>
+    <p>
+      I bring <strong>3+ years of experience in the FP&A domain</strong>,
+      working hands-on across budgeting, forecasting, and performance analysis.
+      <br><br>
+      I’ve built and back-tested financial strategies, supported planning cycles,
+      and developed models that are practical, decision-ready,
+      and aligned with leadership needs.
+    </p>
   </div>
 </section>
 
-<section class="section" id="work">
-  <div class="container">
-    <div class="card">
-      <h1>My Work</h1>
-
-      <div class="work-grid">
-        <div class="work-item">
-          <div class="work-title">FP&A Dashboards</div>
-          <div class="work-desc">
-            Executive Power BI dashboards tracking revenue, margin, and performance KPIs.
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-title">Quant Strategies</div>
-          <div class="work-desc">
-            Python-based backtesting frameworks delivering consistent CAGR and win rates.
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-title">Automation</div>
-          <div class="work-desc">
-            Excel + Python automations to streamline reporting and planning workflows.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="work">
+  <h2>Work</h2>
+  <p>Financial Forecasting Models · Power BI Dashboards · Python & SQL Analysis</p>
 </section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p>Woxsen University – MBA (Finance)</p>
+  <p>Bennett University – B.Tech (Computer Science)</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: challakushal.2k@gmail.com</p>
+  <p>Phone: +91 9182048891</p>
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/kushalchalla" target="_blank">
+      linkedin.com/in/kushalchalla
+    </a>
+  </p>
+</section>
+
+<footer>
+  © 2026 Kushal Challa
+</footer>
 
 </body>
 </html>
